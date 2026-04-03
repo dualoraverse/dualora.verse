@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Store | Premium Posters</title>
+    <meta name="description"
+        content="Discover premium, aesthetic posters for your space. High-quality prints carefully curated to elevate your surroundings.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="logo.jpeg" alt="Poster Store Logo" class="logo">
+                <span class="brand-name">Poster Store</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Dualora.Verse</h1>
+            <p>Where every scroll pulls you into a world of aesthetic stories you’ll want to stay in.</p>
+            <a href="#gallery" class="btn-primary">Explore Collection</a>
+        </div>
+        <div class="hero-glow"></div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header">
+            <h2>Our Collection</h2>
+            <button id="add-photo-btn" class="btn-secondary"><i class="fas fa-plus"></i> Add Photo</button>
+        </div>
+        <div class="gallery-grid" id="gallery-container">
+            <!-- Posters injected here via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Add Photo Modal -->
+    <div id="add-photo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Poster</h3>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="poster-title">Poster Title</label>
+                    <input type="text" id="poster-title" placeholder="e.g. Neon Genesis" required>
+                </div>
+                <div class="input-group">
+                    <label for="poster-price">Price</label>
+                    <input type="text" id="poster-price" placeholder="e.g. ₹99" required>
+                </div>
+                <div class="input-group">
+                    <label for="poster-url">Image URL</label>
+                    <input type="url" id="poster-url" placeholder="https://..." required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="cancel-photo">Cancel</button>
+                <button class="btn-primary" id="submit-photo">Add Poster</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.jpeg" alt="Logo" class="footer-logo">
+                <p>Dualora.Verse</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/dualora.verse?igsh=YzlsNHlueW9kbzhr" target="_blank"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://in.pinterest.com/duafeminine/?invite_code=8b4d9a6d293c4d9abf456e5827b18a9d&sender=1122874257001852485"
+                    target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dualora.Verse All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
