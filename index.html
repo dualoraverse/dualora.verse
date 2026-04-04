@@ -50,40 +50,13 @@
     <section id="gallery" class="gallery">
         <div class="section-header">
             <h2>Our Collection</h2>
-            <button id="add-photo-btn" class="btn-secondary"><i class="fas fa-plus"></i> Add Photo</button>
         </div>
         <div class="gallery-grid" id="gallery-container">
             <!-- Posters injected here via JavaScript -->
         </div>
     </section>
 
-    <!-- Add Photo Modal -->
-    <div id="add-photo-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Add New Poster</h3>
-                <button class="close-btn" id="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group">
-                    <label for="poster-title">Poster Title</label>
-                    <input type="text" id="poster-title" placeholder="e.g. Neon Genesis" required>
-                </div>
-                <div class="input-group">
-                    <label for="poster-price">Price</label>
-                    <input type="text" id="poster-price" placeholder="e.g. ₹99" required>
-                </div>
-                <div class="input-group">
-                    <label for="poster-url">Image URL</label>
-                    <input type="url" id="poster-url" placeholder="https://..." required>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-cancel" id="cancel-photo">Cancel</button>
-                <button class="btn-primary" id="submit-photo">Add Poster</button>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Footer -->
     <footer id="contact">
