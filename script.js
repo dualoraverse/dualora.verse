@@ -11,6 +11,12 @@ const defaultPosters = [
         title: 'Aesthetic Poster',
         imageUrl: 'POS_2.png',
         alt: 'Aesthetic Poster'
+    },
+    {
+        id: 3,
+        title: 'Love quotes💗🫠!',
+        imageUrl: 'POS_3.png',
+        alt: 'Love quotes💗🫠!'
     }
 ];
 
