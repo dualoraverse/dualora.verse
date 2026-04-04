@@ -1,7 +1,23 @@
 // Poster Data Collection
-const defaultPosters = [];
+const defaultPosters = [
+    {
+        id: 1,
+        title: 'Origin of Her Courage',
+        imageUrl: 'POS_1.png',
+        alt: 'Origin of Her Courage'
+    },
+    {
+        id: 2,
+        title: 'Aesthetic Poster',
+        imageUrl: 'POS_2.png',
+        alt: 'Aesthetic Poster'
+    }
+];
 
-let posters = JSON.parse(localStorage.getItem('posters')) || defaultPosters;
+let posters = JSON.parse(localStorage.getItem('posters'));
+if (!posters || posters.length === 0) {
+    posters = [...defaultPosters];
+}
 
 const savePosters = () => {
     localStorage.setItem('posters', JSON.stringify(posters));
@@ -47,22 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const attachDeleteListeners = () => {
-        const deleteButtons = document.querySelectorAll('.btn-delete');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const id = parseInt(e.currentTarget.getAttribute('data-id'));
-                if (confirm('Are you sure you want to delete this poster?')) {
-                    const index = posters.findIndex(p => p.id === id);
-                    if (index > -1) {
-                        posters.splice(index, 1);
-                        savePosters();
-                        renderPosters();
-                    }
-                }
-            });
-        });
-    };
+
 
     const renderPosters = () => {
         galleryContainer.innerHTML = '';
@@ -73,14 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <div class="image-container">
                     <img src="${poster.imageUrl}" alt="${poster.alt}" class="poster-image" loading="lazy">
-                    <button class="btn-delete" data-id="${poster.id}" aria-label="Delete poster">
-                        <i class="fas fa-trash"></i>
-                    </button>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">${poster.title}</h3>
                     <div class="card-footer">
-                        <span class="price">${poster.price}</span>
                         <button class="btn-order" data-title="${poster.title}" aria-label="Order ${poster.title}">
                             Order Now <i class="fab fa-instagram"></i>
                         </button>
@@ -92,75 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         attachOrderListeners();
-        attachDeleteListeners();
     };
 
     // Initial Render
     renderPosters();
 
-    // Modal Logic
-    const modal = document.getElementById('add-photo-modal');
-    const addPhotoBtn = document.getElementById('add-photo-btn');
-    const closeModalBtn = document.getElementById('close-modal');
-    const cancelPhotoBtn = document.getElementById('cancel-photo');
-    const submitPhotoBtn = document.getElementById('submit-photo');
 
-    const titleInput = document.getElementById('poster-title');
-    const priceInput = document.getElementById('poster-price');
-    const urlInput = document.getElementById('poster-url');
-
-    const openModal = () => {
-        modal.classList.add('show');
-        titleInput.value = '';
-        priceInput.value = '₹99';
-        urlInput.value = '';
-        titleInput.focus();
-    };
-
-    const closeModalFunc = () => {
-        modal.classList.remove('show');
-    };
-
-    if (addPhotoBtn) {
-        addPhotoBtn.addEventListener('click', openModal);
-    }
-
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModalFunc);
-    if (cancelPhotoBtn) cancelPhotoBtn.addEventListener('click', closeModalFunc);
-
-    // Close on clicking outside modal content
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModalFunc();
-        }
-    });
-
-    if (submitPhotoBtn) {
-        submitPhotoBtn.addEventListener('click', () => {
-            const title = titleInput.value.trim();
-            const price = priceInput.value.trim() || '₹99';
-            const imageUrl = urlInput.value.trim();
-
-            if (!title || !imageUrl) {
-                alert('Please enter a valid title and image URL');
-                return;
-            }
-
-            // Add to array
-            posters.unshift({
-                id: Date.now(),
-                title: title,
-                price: price,
-                imageUrl: imageUrl,
-                alt: title
-            });
-            savePosters();
-
-            // Refresh UI
-            renderPosters();
-            closeModalFunc();
-        });
-    }
 
     // Smooth Scrolling for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
