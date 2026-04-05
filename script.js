@@ -69,7 +69,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Zoom Feature Logic
+    const imageModal = document.getElementById('image-modal');
+    const zoomImage = document.getElementById('expanded-image');
+    const imageModalClose = document.getElementById('image-modal-close');
 
+    const attachZoomListeners = () => {
+        const posterImages = document.querySelectorAll('.poster-image');
+        posterImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                zoomImage.src = img.src;
+                imageModal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+    };
+
+    if (imageModalClose) {
+        imageModalClose.addEventListener('click', () => {
+            imageModal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+    }
+
+    if (imageModal) {
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 
     const renderPosters = () => {
         galleryContainer.innerHTML = '';
@@ -95,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         attachOrderListeners();
+        attachZoomListeners();
     };
 
     // Initial Render
