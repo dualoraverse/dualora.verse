@@ -3,26 +3,26 @@ const defaultPosters = [
     {
         id: 1,
         title: 'Origin of Her Courage',
-        imageUrl: 'POS_1.webp',
+        imageUrl: 'POS_1.png',
         alt: 'Origin of Her Courage'
     },
     {
         id: 2,
         title: 'Aesthetic Poster',
-        imageUrl: 'POS_2.webp',
+        imageUrl: 'POS_2.png',
         alt: 'Aesthetic Poster'
     },
     {
         id: 3,
         title: 'Love quotes💗🫠!',
-        imageUrl: 'POS_3.webp',
+        imageUrl: 'POS_3.png',
         alt: 'Love quotes💗🫠!'
     },
     {
         id: 4,
         title: 'Love quotes💗🫠!',
-        imageUrl: 'POS_4.webp',
-        alt: 'Her's first Hero!'
+        imageUrl: 'POS_4.png',
+        alt: 'Love quotes💗🫠!'
     }
 ];
 
