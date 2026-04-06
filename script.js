@@ -20,9 +20,9 @@ const defaultPosters = [
     },
     {
         id: 4,
-        title: 'Love quotes💗🫠!',
+        title: 'Her\'s first Hero!',
         imageUrl: 'POS_4.png',
-        alt: 'Love quotes💗🫠!'
+        alt: 'Her\'s first Hero!'
     }
 ];
 
