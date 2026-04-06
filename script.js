@@ -22,7 +22,7 @@ const defaultPosters = [
         id: 4,
         title: 'Love quotes💗🫠!',
         imageUrl: 'POS_4.webp',
-        alt: 'Love quotes💗🫠!'
+        alt: 'Her's first Hero!'
     }
 ];
 
