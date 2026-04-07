@@ -123,14 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <div class="image-container">
                     <img src="${poster.imageUrl}" alt="${poster.alt}" class="poster-image" loading="lazy">
+                    <div class="card-overlay">
+                        <div class="overlay-actions">
+                            <button class="btn-order" data-title="${poster.title}" aria-label="Order ${poster.title}">
+                                Order <i class="fab fa-instagram"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">${poster.title}</h3>
-                    <div class="card-footer">
-                        <button class="btn-order" data-title="${poster.title}" aria-label="Order ${poster.title}">
-                            Order Now <i class="fab fa-instagram"></i>
-                        </button>
-                    </div>
                 </div>
             `;
 
