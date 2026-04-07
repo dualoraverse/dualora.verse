@@ -23,6 +23,12 @@ const defaultPosters = [
         title: 'Her\'s first Hero!',
         imageUrl: 'POS_4.png',
         alt: 'Her\'s first Hero!'
+    },
+    {
+        id: 5,
+        title: 'AK the Aura❤️‍🔥🏁!',
+        imageUrl: 'POS_5.png',
+        alt: 'AK the Aura❤️‍🔥🏁!'
     }
 ];
 
