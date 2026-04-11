@@ -29,6 +29,12 @@ const defaultPosters = [
         title: 'AK the Aura❤️‍🔥🏁!',
         imageUrl: 'POS_5.png',
         alt: 'AK the Aura❤️‍🔥🏁!'
+    },
+    {
+        id: 6,
+        title: 'Elemental 🫧🫠',
+        imageUrl: 'POS_6.png',
+        alt: 'Elemental 🫧🫠'
     }
 ];
 
@@ -40,6 +46,18 @@ if (!posters || posters.length === 0) {
 const savePosters = () => {
     localStorage.setItem('posters', JSON.stringify(posters));
 };
+
+// Sync missing default posters to localStorage to ensure newly added posters show up
+if (posters && posters.length > 0) {
+    let isModified = false;
+    defaultPosters.forEach(dp => {
+        if (!posters.some(p => p.imageUrl === dp.imageUrl)) {
+            posters.push(dp);
+            isModified = true;
+        }
+    });
+    if (isModified) savePosters();
+}
 
 // Theme Management
 const themeToggleBtn = document.getElementById('theme-toggle');
