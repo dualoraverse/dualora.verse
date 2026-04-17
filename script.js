@@ -41,6 +41,12 @@ const defaultPosters = [
         title: 'Yellowlove🧿💛',
         imageUrl: 'POS_7.png',
         alt: 'Yellowlove🧿💛'
+    },
+    {
+        id: 8,
+        title: 'The Spidy❤️🕸️!',
+        imageUrl: 'POS_8.png',
+        alt: 'The Spidy❤️🕸️!'
     }
 ];
 
